@@ -6,25 +6,25 @@ function Nav() {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scroll > 100) {
+      if (window.scrollY > 100) {
         handleShow(true);
       } else handleShow(false);
     });
     return () => {
       window.addEventListener("scroll");
     };
-  });
+  }, []);
 
   return (
     <div className={`nav ${show && "nav_black"}`}>
       <img
         className="nav_logo"
-        src="https://cdn-icons-png.flaticon.com/512/5977/5977590.png"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
         alt="Netflix Logo"
       />
       <img
         className="nav_avatar"
-        src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
         alt="Netflix logo"
       />
     </div>

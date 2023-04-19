@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import axios from "axios";
-import requests from "./requests";
 
 function Banner() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-
+      const request = await axios.get(
+        "https://api.themoviedb.org/3/discover/tv?api_key=b720354a477f447ac27ca12e5e95c3fa&with_networks=213"
+      );
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
@@ -20,6 +20,7 @@ function Banner() {
     fetchData();
   }, []);
 
+  console.log("gokgiki", movie);
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
@@ -29,7 +30,7 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/"+{movie?.backdrop_path})`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
       }}
     >

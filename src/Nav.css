@@ -2,11 +2,15 @@
     position: fixed;
     top: 0;
     width: 100%;
-   padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+       padding: 20px;
    height: 30px;
    z-index: 1;
    transition: all;
-   transition-timing-function: ease-in 
+   transition-timing-function: ease-in;
+
 }
 
 .nav_black{
@@ -18,6 +22,7 @@
     position: fixed;
     left: 20px;
     object-fit: contain;
+    cursor: pointer;
 
 }
 
@@ -26,4 +31,5 @@
     right: 20px;
     width: 30px;
     object-fit: contain;
+    cursor: pointer;
 }
